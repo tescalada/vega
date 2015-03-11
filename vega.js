@@ -4982,6 +4982,10 @@ vg.parse.properties = (function() {
         f = vg.accessor(f);
         if (min) domain[0] = d3.min([domain[0], d3.min(dat, f)]);
         if (max) domain[z] = d3.max([domain[z], d3.max(dat, f)]);
+        if (min == max){
+          domain[0] -= 1;
+          domain[z] += 1;
+        }
       });
     }
 
